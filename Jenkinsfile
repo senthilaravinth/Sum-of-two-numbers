@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK17'   // Make sure this is configured in Jenkins
+        jdk 'JDK - 21' // Make sure this is configured in Jenkins
     }
 
     environment {

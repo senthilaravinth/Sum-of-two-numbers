@@ -2,11 +2,11 @@ FROM openjdk:17
 
 WORKDIR /app
 
-# Copy entire project
+# Copy all files
 COPY . .
 
-# Compile
-RUN javac app/App.java
+# Compile Java file from src path
+RUN javac -d . src/main/java/app/App.java
 
-# Run
+# Run using package name
 CMD ["java", "app.App"]

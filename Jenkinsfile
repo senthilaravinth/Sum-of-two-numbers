@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK - 21' // Make sure this is configured in Jenkins
+        jdk 'JDK - 21'
     }
 
     environment {
@@ -15,14 +15,15 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                 deleteDir()        
-                 checkout scm
+                deleteDir()
+                checkout scm
             }
         }
 
         stage('Build Java Program') {
             steps {
-                bat 'javac app\\App.java'
+                // ✅ FIXED PATH
+                bat 'javac -d . src\\main\\java\\app\\App.java'
             }
         }
 

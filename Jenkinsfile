@@ -15,7 +15,8 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                checkout scm
+                 deleteDir()        
+                 checkout scm
             }
         }
 
